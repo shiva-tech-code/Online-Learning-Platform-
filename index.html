@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conatact Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="frame">
+        <h1 class="heading">Login Here</h1>
+        <div class="details">
+            <h3>Username</h3>
+            <input type="text" id="username" placeholder="username" required>
+            <br>
+            <h3>password</h3>
+            <input type="password" id="password" placeholder="password" required>
+            <br>
+            <a href="">Create a account</a>
+            <a href="">forgot password?</a>
+            <br>
+            <br>
+            <button onclick="login()">Login</button>
+            <p id="message" style="color: red;"></p>
+            <br>
+        </div>
+    </div> 
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var message = document.getElementById("message");
+            
+            if (username === "shivu" && password === "password123") {
+                message.style.color = "green";
+                message.innerText = "Login successful!";
+                setTimeout(() => {
+                    window.location.href = "http://127.0.0.1:5500/home/index.html";
+                }, 1000);
+            } else {
+                message.style.color = "red";
+                message.innerText = "Invalid username or password!";
+            }
+        }
+    </script> 
+</body>
+</html>
